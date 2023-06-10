@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { loginization } from 'redux/auth/auth-operations';
+import { logIn } from 'redux/auth/auth-operations';
 import css from './Login.module.css';
 
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      loginization({
+      logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })

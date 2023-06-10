@@ -6,7 +6,7 @@ import css from './AppBar.module.css'
 export const AppBar = () => {
     const { isLoaggedIn } = useSelector(state => state.auth);
 
-  return (
+return (
     <header>
         <nav className={css.nav}>
             <div>
@@ -22,5 +22,4 @@ export const AppBar = () => {
             </div>
         </nav>
     </header>
-  );
-};
+)};

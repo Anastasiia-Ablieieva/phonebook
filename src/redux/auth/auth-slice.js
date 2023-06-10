@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, loginization, logOut, refreshUser } from './auth-operations';
+import { register, logIn, logOut, refreshUser } from './auth-operations';
 
 const handlePending = state => {
     state.isLoading = true;
@@ -32,14 +32,14 @@ const authSlise = createSlice({
         })
         .addCase(register.rejected, handleRejected)
   
-        .addCase(loginization.pending, handlePending)
-        .addCase(loginization.fulfilled, (state, action) => {
+        .addCase(logIn.pending, handlePending)
+        .addCase(logIn.fulfilled, (state, action) => {
           state.token = action.payload.token;
           state.user = action.payload.user;
           state.isLoaggedIn = true;
           state.isLoading = false;
         })
-        .addCase(loginization.rejected, handleRejected)
+        .addCase(logIn.rejected, handleRejected)
   
         .addCase(logOut.pending, handlePending)
         .addCase(logOut.fulfilled, state => {
