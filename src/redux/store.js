@@ -8,25 +8,28 @@ import { persistReducer,
     PURGE,
     REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // це localStorage під капотом браузера
-import { contactsReducer } from './contactsSlice';
-import { filterReducer } from './filterSlice';
+import { contactsReduser } from './contacts/contactsSlice';
+import { filterReducer } from './contacts/filterSlice';
+import { authReduser } from './auth/auth-slice';
 
-const contactsConfig = {
-    key: 'contacts',
+const persistConfig = {
+    key: 'auth',
     storage,
-};
-
-export const store = configureStore({
+    whitelist: ['token']
+  };
+  
+  export const store = configureStore({
     reducer: {
-        contacts: persistReducer(contactsConfig, contactsReducer),
-        filter: filterReducer
+      auth: persistReducer(persistConfig, authReduser),
+      filter: filterReducer,
+      contacts: contactsReduser,
     },
     middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
+      getDefaultMiddleware({
         serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
-    }),
-});
-
-export const persistor = persistStore(store);
+      }),
+  });
+  
+  export const persistor = persistStore(store);
