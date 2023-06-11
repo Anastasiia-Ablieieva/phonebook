@@ -28,24 +28,22 @@ export const ContactForm = () => {
 
     return (
         <form className={css.form} onSubmit={handleSubmit}>
-        <label className={css.lable} htmlFor={id}>Name</label>
+        <label className={css.lable}>Name</label>
         <input
             className={css.input}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces"
-            id={id}
             required
         />
-        <label className={css.lable} htmlFor={id}>Number</label>
+        <label className={css.lable}>Number</label>
         <input
             className={css.input}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            id={id}
             required
         />
         <button className={css.button} type="submit">Add contact</button>
