@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import css from './Home.module.css'
+import Button from '@mui/material/Button';
+
 
 export default function Home() {
     return (
       <div>
-        <h2 className={css.taxt}>
-            Please,  
-            <Link to="/register"> Register </Link> 
-            and create your contact list, or 
-            <Link to="/login"> Log in </Link> 
-            and use your contacts!
-        </h2>
+        <p className={css.taxt}>{`Please, `}
+            <Button variant="outlined" to="/register"> Register </Button> 
+            {` and create your contact list, or `} 
+            <Button variant="outlined" to="/login"> Log in </Button> 
+            {` and use your contacts!`}
+        </p>
       </div>
     );
   }
