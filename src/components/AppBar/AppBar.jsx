@@ -15,10 +15,10 @@ return (
             </div>
             <div className={css.authNav}>
                 {isLoaggedIn ? (<UserMenu />) : (
-                <div>
+                <>
                     <Link to="/register">Register</Link>
                     <Link to="/login">Log in</Link>
-                </div>)}
+                </>)}
             </div>
         </nav>
     </header>
