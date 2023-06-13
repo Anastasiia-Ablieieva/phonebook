@@ -2,18 +2,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/contacts/operations';
 import css from './ContactForm.module.css';
+import Button from '@mui/material/Button';
 
-export const ContactForm = () => {
+export default function ContactForm() {
 
     const dispatch = useDispatch();
     const contacts = useSelector(selectContacts);
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = e => {
+        e.preventDefault();
 
         const contact = {
-            name: event.currentTarget.elements.name.value,
-            number: event.currentTarget.elements.number.value,
+            name: e.currentTarget.elements.name.value,
+            number: e.currentTarget.elements.number.value,
         };
 
         const isExist = contacts.find(({ name }) => name.toLowerCase() === contact.name.toLowerCase());
@@ -23,7 +24,7 @@ export const ContactForm = () => {
         }
 
         dispatch(addContact(contact));
-            event.currentTarget.reset();
+            e.currentTarget.reset();
     }
 
     return (
@@ -46,7 +47,7 @@ export const ContactForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
         />
-        <button className={css.button} type="submit">Add contact</button>
+        <Button variant="outlined" type="submit">Add contact</Button>
       </form>
     )
 }

@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 
-.authNav {
+.authNav, .contactsNav {
   display: flex;
   gap: 30px;
 }

@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useAuth } from 'hooks/hooks';
 
 export const PrivateRoute = ({ component: Component, redirectTo: addres }) => {
     
-    const { isLoaggedIn, isRefreshing } = useSelector(state => state.auth);
+    const { isLoaggedIn, isRefreshing } = useAuth();
     const shouldRedirect = !isLoaggedIn && !isRefreshing;
 
     return shouldRedirect ? <Navigate to={addres} /> : Component;

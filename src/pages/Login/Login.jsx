@@ -2,8 +2,8 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/auth-operations';
 import css from './Login.module.css';
 import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
-import { FormLabel, Input } from '@mui/material';
+// import FormControl from '@mui/material/FormControl';
+// import { FormLabel, Input } from '@mui/material';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -21,16 +21,16 @@ export default function Login() {
   };
 
   return (
-    <FormControl sx={{ width: '32ch' }} onSubmit={handleSubmit} autoComplete="off">
-      <FormLabel className={css.label}>
+    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+      <label className={css.label}>
         Email
-        <Input type="email" name="email" />
-      </FormLabel>
-      <FormLabel className={css.label}>
+        <input type="email" name="email" />
+      </label>
+      <label className={css.label}>
         Password
-        <Input type="password" name="password" />
-      </FormLabel>
+        <input type="password" name="password" />
+      </label>
       <Button variant="outlined" type="submit">Log In</Button>
-    </FormControl>
+    </form>
   );
 };

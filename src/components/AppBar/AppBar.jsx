@@ -9,9 +9,9 @@ export const AppBar = () => {
 return (
     <header>
         <nav className={css.nav}>
-            <div>
+            <div className={css.contactsNav}>
                 <Link to='/'>Home</Link>
-                {isLoaggedIn && (<Link to="/contacts">Contacts</Link>)}
+                {isLoaggedIn && (<Link to="/contacts"> Contacts </Link>)}
             </div>
             <div className={css.authNav}>
                 {isLoaggedIn ? (<UserMenu />) : (

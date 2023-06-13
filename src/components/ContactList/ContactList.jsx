@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 import Button from '@mui/material/Button';
 
 export default function ContactList() {
-    // const filteredContacts = useSelector(selectFilteredContacts);
     const dispatch = useDispatch();
 
     useEffect(() => {
