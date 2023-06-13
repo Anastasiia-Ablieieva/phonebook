@@ -1,3 +1,4 @@
+import Filter from "components/ContactFilter/ContactFilter";
 import ContactForm from "components/ContactForm/ContactForm";
 import ContactList from "components/ContactList/ContactList";
 import { useEffect } from "react";
@@ -14,11 +15,13 @@ export default function Contacts() {
     }, [dispatch]);
 
     return (
-        <div> 
+        <div>
             <h1>Phonebook</h1>
             <ContactForm />
-            <div>{isLoading && 'Request in progress...'}</div>
+            <h1>Contacts</h1>
+            <Filter />
+            {isLoading && <p>In process...</p>}
             <ContactList />
         </div>
-    )
+    );
 }

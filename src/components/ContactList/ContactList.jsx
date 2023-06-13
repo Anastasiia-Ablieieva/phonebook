@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilteredContacts, selectIsLoading } from 'redux/selectors';
 import { deleteContact, fetchContacts } from 'redux/contacts/operations';
-import css from './ContactList.module.css';
 import { useEffect } from 'react';
 import Button from '@mui/material/Button';
+import css from './ContactList.module.css';
 
 export default function ContactList() {
+    const filteredContacts = useSelector(selectFilteredContacts);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -13,7 +14,6 @@ export default function ContactList() {
     }, [dispatch]);
 
     const isLoading = useSelector(selectIsLoading);
-    const filteredContacts = useSelector(selectFilteredContacts);
 
     const onDeleteContact = id => {
         dispatch(deleteContact(id));

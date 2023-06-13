@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filtration } from 'redux/contacts/filterSlice';
 import css from './ContactFilter.module.css';
 
-export const Filter = () => {
+export default function Filter () {
   const dispatch = useDispatch();
   const filter = useSelector(state => state.filter);
 
