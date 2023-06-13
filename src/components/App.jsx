@@ -1,11 +1,11 @@
 import {Route, Routes, Navigate } from "react-router-dom";
-import { Layout } from "./Layout/Layout";
+import { Layout } from "./Layout";
 import { useDispatch } from "react-redux";
 import { useEffect, lazy } from "react";
 import { refreshUser } from "redux/auth/auth-operations";
 import useAuth from "hooks/hooks";
-import RestrictedRoute from "./RestrictedRoute";
-import PrivateRoute from "./PrivateRoute";
+import { RestrictedRoute } from "./RestrictedRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 const Register = lazy(() => import('../pages/Register/Register'));
 const Home = lazy(() => import('../pages/Home/Home'));
@@ -20,9 +20,8 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
+  return (
+    !isRefreshing && (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -50,5 +49,6 @@ export const App = () => {
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
+    )
   );
 };
