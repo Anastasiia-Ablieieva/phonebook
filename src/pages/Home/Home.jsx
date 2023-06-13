@@ -5,9 +5,9 @@ export default function Home() {
     return (
       <div>
         <p className={css.taxt}>{`Please, `}
-            <a to="/register"> Register </a> 
+            <Link to="/register"> Register </Link> 
             {` and create your contact list, or `} 
-            <a to="/login"> Log in </a> 
+            <Link to="/login"> Log in </Link> 
             {` and use your contacts!`}
         </p>
       </div>

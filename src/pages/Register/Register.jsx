@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
 import css from './Register.module.css';
 import Button from '@mui/material/Button';
+// import FormControl from '@mui/material/FormControl';
 
 export default function Register() {
   const dispatch = useDispatch();

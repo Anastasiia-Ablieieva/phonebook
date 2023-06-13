@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function AuthNav() {
     return (
-        <div>
-            <a to="/register"> Register</a>
-            <a to="/login"> Log in</a>
-        </div>
+        <nav>
+            <NavLink to="/register"> Register </NavLink>
+            <NavLink to="/login"> Log in</NavLink>
+        </nav>
     );
 }
