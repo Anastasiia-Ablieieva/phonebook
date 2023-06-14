@@ -16,9 +16,9 @@ export default function Contacts() {
 
     return (
         <div>
-            <h1>Phonebook</h1>
+            <h2>Phonebook</h2>
             <ContactForm />
-            <h1>Contacts</h1>
+            <h2>Contacts</h2>
             <Filter />
             {isLoading && <p>In process...</p>}
             <ContactList />
