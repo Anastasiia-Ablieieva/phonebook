@@ -7,14 +7,16 @@ export default function Filter () {
   const filter = useSelector(state => state.filter);
 
     return (
-        <label className={css.label} >
-          Find contacts by name
+      <form className={css.form}>
+        <label className={css.label} >Find contacts by name</label>
           <input
             type="text"
             className={css.input} 
             value={filter} 
             onChange={e => dispatch(filtration(e.target.value))}
           />
-        </label>
+
+      </form>
+
     );
   }

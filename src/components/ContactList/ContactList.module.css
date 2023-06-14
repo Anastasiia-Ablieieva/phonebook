@@ -1,4 +1,6 @@
 .contactList {
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -12,13 +14,3 @@
     gap: 8px;
 }
 
-.button {
-    padding: 5px;
-    width: 110px;
-
-    font-size: 15px;
-    border: 1px solid #afb1b8;
-    border-radius: 5px;
-
-    cursor: pointer;
-}

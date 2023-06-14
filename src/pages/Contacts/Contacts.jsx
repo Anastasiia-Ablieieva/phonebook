@@ -16,9 +16,21 @@ export default function Contacts() {
 
     return (
         <div>
-            <h2>Phonebook</h2>
+            <p style={{
+                margin: 8,
+                padding: "12px 16px",
+                borderRadius: 4,
+                backgroundColor: "hsl(211, 80%, 76%)",
+                color: "black",
+            }}>PHONEBOOK</p>
             <ContactForm />
-            <h2>Contacts</h2>
+            <p style={{
+                margin: 8,
+                padding: "12px 16px",
+                borderRadius: 4,
+                backgroundColor: "hsl(211, 80%, 76%)",
+                color: "black",
+            }}>CONTACTS</p>
             <Filter />
             {isLoading && <p>In process...</p>}
             <ContactList />

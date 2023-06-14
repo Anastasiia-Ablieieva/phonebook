@@ -22,14 +22,14 @@ export default function Login() {
 
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
+      <label>
         Email
-        <input type="email" name="email" />
       </label>
-      <label className={css.label}>
+      <input className={css.input} type="email" name="email" />
+      <label>
         Password
-        <input type="password" name="password" />
       </label>
+      <input className={css.input} type="password" name="password" />
       <Button variant="outlined" type="submit">Log In</Button>
     </form>
   );

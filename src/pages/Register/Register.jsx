@@ -22,18 +22,12 @@ export default function Register() {
 
 return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
-      </label>
+      <label>Username</label>
+      <input className={css.input} type="text" name="name" />
+      <label>Email</label>
+      <input className={css.input} type="email" name="email" />
+      <label>Password</label>
+      <input className={css.input} type="password" name="password" />
       <Button type="submit" variant="outlined">Register</Button>
     </form>
   );
